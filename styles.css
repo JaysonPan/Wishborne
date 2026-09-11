@@ -1,0 +1,237 @@
+:root {
+  color-scheme: dark;
+  --night: #061317;
+  --surface: #0b2025;
+  --pearl: #f7efd7;
+  --muted: #aab7b2;
+  --gold: #e7b34a;
+  --turquoise: #2fa69d;
+  --coral: #d85a3f;
+  --line: rgba(247, 239, 215, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--night);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--pearl);
+  background:
+    radial-gradient(circle at 18% 8%, rgba(47, 166, 157, 0.12), transparent 24rem),
+    radial-gradient(circle at 82% 36%, rgba(231, 179, 74, 0.08), transparent 20rem),
+    var(--night);
+  font-family: ui-serif, Georgia, "Times New Roman", serif;
+  line-height: 1.7;
+}
+
+a {
+  color: var(--pearl);
+  text-decoration-color: var(--gold);
+  text-underline-offset: 0.22em;
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+a:focus-visible {
+  border-radius: 2px;
+  outline: 3px solid var(--turquoise);
+  outline-offset: 4px;
+}
+
+.shell {
+  width: min(calc(100% - 40px), 760px);
+  margin: 0 auto;
+}
+
+.masthead {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 30px 0 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.34);
+}
+
+.brand {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+}
+
+.brand strong {
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.24em;
+}
+
+.brand span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.masthead nav {
+  display: flex;
+  gap: 18px;
+  margin-left: auto;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 13px;
+}
+
+main {
+  padding: 64px 0 80px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 650px;
+  margin: 10px 0 18px;
+  font-size: clamp(36px, 8vw, 66px);
+  font-weight: 500;
+  line-height: 1.04;
+}
+
+.lede {
+  max-width: 610px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(11, 32, 37, 0.76);
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.action.primary {
+  color: var(--night);
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.content {
+  margin-top: 58px;
+}
+
+.section {
+  padding: 30px 0;
+  border-top: 1px solid var(--line);
+}
+
+.section h2 {
+  margin: 0 0 12px;
+  color: var(--gold);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.section h3 {
+  margin: 24px 0 8px;
+  font-size: 17px;
+}
+
+.section p,
+.section li {
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.section p {
+  margin: 10px 0 0;
+}
+
+.section ul {
+  margin: 10px 0 0;
+  padding-left: 22px;
+}
+
+.locale {
+  margin-top: 56px;
+  padding-top: 48px;
+  border-top: 2px solid rgba(231, 179, 74, 0.34);
+}
+
+.contact {
+  color: var(--pearl);
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 650;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 26px 0 42px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 12px;
+}
+
+@media (max-width: 560px) {
+  .shell {
+    width: calc(100% - 28px);
+  }
+
+  .masthead {
+    flex-wrap: wrap;
+  }
+
+  .masthead nav {
+    width: 100%;
+    margin-left: 70px;
+    gap: 18px;
+  }
+
+  main {
+    padding-top: 44px;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
